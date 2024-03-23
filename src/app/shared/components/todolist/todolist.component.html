@@ -1,0 +1,17 @@
+
+<h3 class="alert alert-warning">Todo List</h3>
+<ul class="list-group" *ngIf="todoArr.length > 0; else noTodo">
+    <li class="list-group-item d-flex justify-content-between"  *ngFor="let todo of todoArr">
+        <strong>{{todo.todoItem}}</strong>
+        <span>
+            <button class="btn btn-outline-primary" (click)="onedit(todo)">Edit</button>
+            <button class="btn btn-outline-danger ml-3" (click)="ondelete(todo)">Delete</button>
+
+        </span>
+    </li>
+</ul>
+<ng-template #noTodo>
+    <p class="alert alert-warning">
+        No todo item added yet
+    </p>
+</ng-template> 

@@ -1,0 +1,10 @@
+ <h3  class="alert alert-dark">Todo Item</h3>
+<form [formGroup]="todoForm" (ngSubmit)="onsubmit()">
+   <div class="form-group">
+    <label for="todoItem">Todo Item</label>
+    <input type="text" formControlName="todoItem" class="form-control" id="todoItem">
+   </div>
+   <button class="btn btn-outline-success"[disabled]="todoForm.invalid" *ngIf="!isEditMode">Add Todo</button>
+   <button class="btn btn-outline-success"[disabled]="todoForm.invalid" (click)="onUpdate()" *ngIf="isEditMode" type="button" >Add updata</button>
+
+</form>
